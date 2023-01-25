@@ -1,16 +1,13 @@
+<!-- 分页器组件 -->
 <template>
   <div class="pagination">
     <!-- 上 -->
-    <button :disabled="pageNo == 1" @click="$emit('getPageNo', pageNo - 1)">
-      上一页
-    </button>
+    <button :disabled="pageNo == 1" @click="$emit('getPageNo', pageNo - 1)">上一页</button>
     <button
       v-if="startNumAndEndNum.start > 1"
       @click="$emit('getPageNo', 1)"
       :class="{ active: pageNo == 1 }"
-    >
-      1
-    </button>
+    >1</button>
     <button v-if="startNumAndEndNum.start > 2">···</button>
     <!-- 中间部分 -->
     <button
@@ -29,16 +26,11 @@
       v-if="startNumAndEndNum.end < totalPage"
       @click="$emit('getPageNo', totalPage)"
       :class="{active:pageNo==totalPage}"
-    >
-      {{ totalPage }}
-    </button>
+    >{{ totalPage }}</button>
     <button
       :disabled="pageNo == totalPage"
       @click="$emit('getPageNo', pageNo + 1)"
-    >
-      下一页
-    </button>
-
+    >下一页</button>
     <button style="margin-left: 30px">共 {{ total }} 条</button>
   </div>
 </template>
@@ -57,8 +49,7 @@ export default {
     startNumAndEndNum() {
       const { continues, pageNo, totalPage } = this;
       //先定义两个变量存储起始数字与结束数字
-      let start = 0,
-        end = 0;
+      let start = 0, end = 0;
       //连续页码数字5【就是至少五页】，如果出现不正常的现象【就是不够五页】
       //不正常现象【总页数没有连续页码多】
       if (continues > totalPage) {

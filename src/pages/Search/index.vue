@@ -8,7 +8,7 @@
                 <div class="bread">
                     <ul class="fl sui-breadcrumb">
                         <li>
-                            <a href="#">全部结果</a>
+                            <a href="#">全部结果</a>  
                         </li>
                     </ul>
                     <ul class="fl sui-tag">
@@ -22,9 +22,7 @@
                         </li>
                         <!-- 品牌的面包屑 -->
                         <li class="with-x" v-if="searchParams.trademark">
-                            {{
-                                searchParams.trademark.split(":")[1]
-                            }}<i @click="removeTradeMark">×</i>
+                            {{ searchParams.trademark.split(":")[1] }}<i @click="removeTradeMark">×</i>
                         </li>
                         <!--平台的售卖的属性值展示 -->
                         <li class="with-x" v-for="(attrValue, index) in searchParams.props" :key="index">
@@ -41,12 +39,10 @@
                             <!-- 排序的解构 -->
                             <ul class="sui-nav">
                                 <li :class="{ active: isOne }" @click="changeOrder('1')">
-                                    <a>综合<span v-show="isOne" class="iconfont"
-                                            :class="{ 'icon-UP': isAsc, 'icon-DOWN': isDesc }"></span></a>
+                                    <a>综合<span v-show="isOne" class="iconfont" :class="{ 'icon-UP': isAsc, 'icon-DOWN': isDesc }"></span></a>
                                 </li>
                                 <li :class="{ active: isTwo }" @click="changeOrder('2')">
-                                    <a>价格<span v-show="isTwo" class="iconfont"
-                                            :class="{ 'icon-UP': isAsc, 'icon-DOWN': isDesc }"></span></a>
+                                    <a>价格<span v-show="isTwo" class="iconfont" :class="{ 'icon-UP': isAsc, 'icon-DOWN': isDesc }"></span></a>
                                 </li>
                             </ul>
                         </div>
@@ -87,8 +83,7 @@
                     </div>
                     <!-- <Pagination  :pageNo="31"  :pageSize="3" :total="99" :continues="5" @getPageNo="getPageNo"/> -->
                     <!-- 分页器:测试分页器阶段，这里数据将来需要替换的-->
-                    <Pagination :pageNo="searchParams.pageNo" :pageSize="searchParams.pageSize" :total="total"
-                        :continues="5" @getPageNo="getPageNo" />
+                    <Pagination :pageNo="searchParams.pageNo" :pageSize="searchParams.pageSize" :total="total" :continues="5" @getPageNo="getPageNo" />
                 </div>
             </div>
         </div>

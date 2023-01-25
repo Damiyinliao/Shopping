@@ -1,3 +1,4 @@
+<!-- 轮播图组件 -->
 <template>
     <div class="swiper-container" ref="cur">
       <div class="swiper-wrapper">
