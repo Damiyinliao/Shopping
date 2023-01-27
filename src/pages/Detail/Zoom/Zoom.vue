@@ -47,8 +47,6 @@ export default {
       mask.style.top = top +'px';
       big.style.left = - 2 * left+'px';
       big.style.top = -2 * top +'px';
-
-
     },
   },
 

@@ -35,7 +35,7 @@ export default {
             prevEl: ".swiper-button-prev",
           },
           //显示几个图片设置
-          slidesPerView: 3,
+          slidesPerView: 4,
           //每一次切换图片个数
           slidesPerGroup:1
         });
