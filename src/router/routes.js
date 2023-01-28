@@ -4,8 +4,10 @@ import Search from '@/pages/Search'
 import Login from '@/pages/Login'
 import Register from '@/pages/Register'
 import Detail from '@/pages/Detail'
+import AddCartSuccess from '@/pages/AddCartSuccess'
+import ShopCart from '@/pages/ShopCart'
 //路由配置信息
-export default  [
+export default [
     // 重定向，在项目跑起来的时候，访问/，立马让它定向到首页
     {
         path: "*",
@@ -59,6 +61,22 @@ export default  [
         component: Register,
         meta: {
             show: false
+        }
+    },
+    {
+        name: "addcartsuccess",
+        path: "/addcartsuccess",
+        component: AddCartSuccess,
+        meta: {
+            show: true
+        }
+    },
+    {
+        name: "shopcart",
+        path: "/shopcart",
+        component: ShopCart,
+        meta: {
+            show: true
         }
     }
 ]

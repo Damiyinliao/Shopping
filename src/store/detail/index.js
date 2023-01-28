@@ -1,14 +1,14 @@
 import { reqGoodsInfo, reqAddOrUpdateShopCart } from "@/api";
 //封装游客身份模块uuid--->生成一个随机字符串（不能在变了）
-// import {getUUID} from '@/utils/uuid_token';
+import {getUUID} from '@/utils/uuid_token';
 const state = {
   goodInfo: {},
   //游客临时身份
-//    uuid_token:getUUID()
+   uuid_token:getUUID()
 };
 const mutations = {
   GETGOODINFO(state, goodInfo) {
-    state.goodInfo = goodInfo;
+    state.goodInfo = goodInfo; 
   },
 };
 const actions = {
@@ -30,7 +30,7 @@ const actions = {
       return "ok";
     } else {
       //返回的是失败的标记
-      return Promise.reject(new Error("faile"));
+      return Promise.reject(new Error("failed"));
     }
   },
 };

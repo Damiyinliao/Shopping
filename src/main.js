@@ -25,8 +25,8 @@ import "swiper/css/swiper.css";
 
 
 
-import { reqGetSearchInfo } from './api'
-console.log(reqGetSearchInfo({}));
+// import { reqGetSearchInfo } from './api'
+// console.log(reqGetSearchInfo({}));
 
 
 
