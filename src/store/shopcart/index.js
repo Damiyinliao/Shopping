@@ -21,7 +21,7 @@ const actions = {
     if (result.code == 200) {
       return "ok";
     } else {
-      return Promise.reject(new Error("faile"));
+      return Promise.reject(new Error("failed"));
     }
   },
   //修改购物车某一个产品的选中状态
@@ -30,7 +30,7 @@ const actions = {
     if (result.code == 200) {
       return "ok";
     } else {
-      return Promise.reject(new Error("faile"));
+      return Promise.reject(new Error("failed"));
     }
   },
   //删除全部勾选的产品
@@ -39,10 +39,7 @@ const actions = {
     //获取购物车中全部的产品（是一个数组）
     let PromiseAll = [];
     getters.cartList.cartInfoList.forEach((item) => {
-      let promise =
-        item.isChecked == 1
-          ? dispatch("deleteCartListBySkuId", item.skuId)
-          : "";
+      let promise = item.isChecked == 1 ? dispatch("deleteCartListBySkuId", item.skuId) : "";
       //将每一次返回的Promise添加到数组当中
       PromiseAll.push(promise);
     });

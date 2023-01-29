@@ -36,8 +36,7 @@
               href="javascript:void(0)"
               class="mins"
               @click="handler('minus', -1, cart)"
-              >-</a
-            >
+              >-</a>
             <input
               autocomplete="off"
               type="text"
@@ -50,8 +49,7 @@
               href="javascript:void(0)"
               class="plus"
               @click="handler('add', 1, cart)"
-              >+</a
-            >
+              >+</a>
           </li>
           <li class="cart-list-con6">
             <span class="sum">{{ cart.skuNum * cart.skuPrice }}</span>
