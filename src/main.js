@@ -42,7 +42,8 @@ import "swiper/css/swiper.css";
 
 
 
-
+//引入表单校验插件
+import "@/plugins/validate";
 
 
 new Vue({
