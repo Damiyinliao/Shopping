@@ -61,7 +61,7 @@
                                     </div>
                                     <div class="price">
                                         <strong>
-                                            <em>¥</em>
+                                            <em>¥ </em>
                                             <i>{{ good.price }}.00</i>
                                         </strong>
                                     </div>
