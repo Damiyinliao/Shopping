@@ -5,21 +5,14 @@
       <div class="checkout-tit">
         <h4 class="tit-txt">
           <span class="success-icon"></span>
-          <span class="success-info"
-            >订单提交成功，请您及时付款，以便尽快为您发货~~</span
-          >
+          <span class="success-info">订单提交成功，请您及时付款，以便尽快为您发货~~</span>
         </h4>
         <div class="paymark">
-          <span class="fl"
-            >请您在提交订单<em class="orange time">4小时</em
-            >之内完成支付，超时订单会自动取消。订单号：<em>{{
-              orderId
-            }}</em></span
-          >
-          <span class="fr"
-            ><em class="lead">应付金额：</em
-            ><em class="orange money">￥{{ payInfo.totalFee }}</em></span
-          >
+          <span class="fl">请您在提交订单<em class="orange time">4小时</em>之内完成支付，超时订单会自动取消。订单号：<em>{{ orderId }}</em></span>
+          <span class="fr">
+            <em class="lead">应付金额：</em>
+            <em class="orange money">￥{{ payInfo.totalFee }}</em>
+          </span>
         </div>
       </div>
       <div class="checkout-info">
@@ -51,7 +44,6 @@
           </ul>
         </div>
         <div class="hr"></div>
-
         <div class="payshipInfo">
           <div class="step-tit">
             <h5>支付网银</h5>
@@ -75,7 +67,6 @@
           </div>
         </div>
         <div class="hr"></div>
-
         <div class="submit">
           <a class="btn" @click="open">立即支付</a>
         </div>
@@ -126,7 +117,8 @@ export default {
     //弹出框
     async open() {
       //生成二维(地址)
-      let url = await QRCode.toDataURL(this.payInfo.codeUrl);
+      // let url = await QRCode.toDataURL(this.payInfo.codeUrl);
+      let url = '';
       this.$alert(`<img src=${url} />`, "请你微信支付", {
         dangerouslyUseHTMLString: true,
         //中间布局
@@ -145,7 +137,7 @@ export default {
           //instance：当前组件实例
           //done:关闭弹出框的方法
           if (type == "cancel") {
-            alert("请联系管理员豪哥");
+            alert("请联系网站管理员");
             //清除定时器
             clearInterval(this.timer);
             this.timer = null;
@@ -153,7 +145,7 @@ export default {
             done();
           } else {
             //判断是否真的支付了
-            //开发人员：为了自己方便，这里判断先不要了
+            //开发人员：为了自己方便，这里判断先不要了，不花钱也可以通过
             // if (this.code == 200) {
               clearInterval(this.timer);
               this.timer = null;

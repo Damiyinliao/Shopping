@@ -38,6 +38,16 @@ import "@/plugins/validate";
 //引入所有请求API
 import * as API from '@/api'
 
+//引入vue-lazyload图片懒加载 插件
+import VueLazyload from 'vue-lazyload'
+//引入默认加载的图片
+import sph from '@/assets/shangpinhui.jpeg'
+//注册插件
+Vue.use(VueLazyload,{
+  //懒加载默认的图片
+  loading: sph
+})
+
 new Vue({
   render: h => h(App),
   //全局事件总线$bus配置
